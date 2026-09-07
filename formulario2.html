@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles3.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MANEJO DE FORMULARIOS</title> 
+
+    
+</head>
+
+<body>
+    <h1>Mesa de Ayuda - Soporte técnico</h1>
+    
+    <form action="/guardar registro" method="post">
+        <fieldset>
+
+            <legend>Datos Del Solicitante</legend>
+            <form action="/guardar_registro" method="POST">
+   <fieldset>
+    <fieldset>
+    <legend>Datos del Solicitante</legend>
+     <label for="documento">Nombre Completo:</label>
+        <input type="text" id="documento" name="documento"  pattern="[A-Za-z\s]{3,50}" title="El nombre debe contener entre 3 y 50 caracteres alfabéticos" required>
+        <br><br>
+     <label for="nombre">Correo Institucional:</label>
+        <input type="email" id="nombre" name="nombre" required>
+        <br><br>
+     <label for="equipo">Sede / Municipio:</label>
+        <select id="equipo" name="equipo" required>
+            <option value="">Seleccione la ubicación...</option>
+            <option value="Funza">Funza</option>
+            <option value="Mosquera">Mosquera</option>
+            <option value="Madrid">Madrid</option>
+        </select>
+    </fieldset>
+    <br><br>
+    <fieldset>
+<legend>Detalles del Requerimiento</legend>
+<label for="equipo">Tipo de incidencia:</label>
+  
+        <input type="radio" id="diurna" name="jornada" value="Diurna" required>
+        <label for="diurna" class="label-inline">Falla de Hardware / Daño físico</label>
+
+        <input type="radio" id="nocturna" name="jornada" value="Nocturna" required>
+        <label for="nocturna" class="label-inline">Falla de Software/Hardware</label>
+        <br><br>
+
+    <input type="checkbox" id="Prioridad" name="Prioridad" required class="checkbox-inline">
+    <label for="Prioridad">Marcar como prioridad ALTA</label>
+    <br><br>
+
+    <button type="submit">Generar Ticket de Soporte</button>
+ </fieldset>
+ </fieldset>
+    </form>
+
+         <center><h1>Tickets Recientes</h1></center>
+<table border="1" class="tabla-registros">
+
+   
+            <legend>Ultimos Registros</legend>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Ticket ID</th>
+                        <th>Sede </th>
+                        <th>Tipo</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody id="registros">
+                    <!-- Aquí se agregarán los registros dinámicamente -->
+                     <tr>
+                    <td>#tk-1045</td>
+                    <td>Mosquera</td>
+                    <td>Software</td>
+                    <td>En revision</td>
+                     </tr>
+                     <tr>
+                        <td>#TK-1046</td>
+                        <td>Facatativa</td>
+                        <td>hardware</td>
+                        <td>Pendiente piezas</td>
+                     </tr>
+                     <tr>
+                        <td>#TK-1047</td>
+                        <td>Soacha</td>
+                        <td>Hardware</td>
+                        <td>Solucionado</td>
+                     </tr>
+            </tbody>            
+
+        </fieldset>
+    </form>
+    </body>
